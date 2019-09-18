@@ -2,7 +2,7 @@
 /**
 * main - Entry point
 * print size of types
-* return: Always 0 (Success)
+* Return: Always 0 (Success)
 */
 int main(void)
 {
