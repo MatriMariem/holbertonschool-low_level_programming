@@ -6,26 +6,16 @@
 */
 int main(void)
 {
-int x, y, i, j;
+int x, y;
 for (x = 0; x <= 9; x++)
 {
 for (y = 0; y <= 9; y++)
 {
-if (x != y)
+if (x != y && x < y)
 {
-if (x < y)
-{
-i = x;
-j = y;
-}
-else
-{
-i = y;
-j = x;
-}
-putchar(i + '0');
-putchar(j + '0');
-if (!(i == 8 && j == 9))
+putchar(x + '0');
+putchar(y + '0');
+if (!(x == 8 && y == 9))
 {
 putchar(',');
 putchar(' ');
