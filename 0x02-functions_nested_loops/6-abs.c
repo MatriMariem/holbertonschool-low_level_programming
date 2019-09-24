@@ -6,8 +6,9 @@
 *Return: abs value
 */
 
-int _abs(int n)
+int _abs(int)
 {
+int n;
 if (n < 0)
 {
 n = n * (-1);
