@@ -23,6 +23,6 @@ if (mul5 < 1024)
 sum = sum + mul5;
 }
 }
-printf("%d", sum);
+printf("%d\n", sum);
 return (0);
 }
