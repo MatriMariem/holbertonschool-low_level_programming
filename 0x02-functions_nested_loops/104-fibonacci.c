@@ -7,17 +7,17 @@
  */
 int main(void)
 {
-int x, y, z, i;
+long x, y, z, i;
 x = 1;
 y = 2;
-printf("%d, %d, ", x, y);
+printf("%ld, %ld, ", x, y);
 for (i = 3; i <= 97; i++)
 {
 z = x + y;
-printf("%d, ", z);
+printf("%ld, ", z);
 x = y;
 y = z;
 }
-printf("%d\n", z);
+printf("%ld\n", z);
 return (0);
 }
