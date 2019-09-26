@@ -9,7 +9,6 @@ void print_number(int n)
 int i, j, num, div;
 if ((n < 0) && (n > -2147483648))
 {
-n = n * (-1);
 _putchar('-');
 }
 num = n;
@@ -26,7 +25,14 @@ div = div * 10;
 }
 while (div >= 1)
 {
+if (n < 0)
+{
+_putchar(((n / div)*(-1)) + '0');
+}
+else
+{
 _putchar((n / div)+'0');
+}
 n = n % div;
 div = div / 10;
 }
