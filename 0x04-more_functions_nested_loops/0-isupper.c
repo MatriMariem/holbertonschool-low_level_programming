@@ -3,19 +3,17 @@
 /**
 *_isupper - function that checks for uppercase character
 *@c: is an int
-*Return: 0 if lowercase, 1 if lowercase
+*Return: 1 if uppercase, 0 if else
 */
 
 int _isupper(int c)
 {
-int r;
-if ((c >= 'a') && (c <= 'z'))
+if ((c >= 'A') && (c <= 'Z'))
 {
-r = 0;
+return (1);
 }
-else if ((c >= 'A') && (c <= 'Z'))
+else
 {
-r = 1;
+return (0);
 }
-return (r);
 }
