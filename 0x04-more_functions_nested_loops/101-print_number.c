@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
-*print_number - prints from 0 to 9
+*print_number - prints an integer 
 *@n: int
 * Return - void
 */
@@ -20,7 +20,7 @@ num = num / 10;
 i++;
 }
 div = 1;
-for (j = 1; j <= i - 1; j++)
+for (j = 1; j <= (i - 1); j++)
 {
 div = div * 10;
 }
