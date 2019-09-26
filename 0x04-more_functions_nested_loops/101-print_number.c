@@ -7,7 +7,7 @@
 void print_number(int n)
 {
 int i, j, num, div;
-if (n < 0)
+if ((n < 0) && (n > -2147483648))
 {
 n = n * (-1);
 _putchar('-');
