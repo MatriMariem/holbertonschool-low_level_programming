@@ -6,10 +6,24 @@
 */
 void print_number(int n)
 {
-int i, j, num, div;
+int i, j, num, div, r;
+if (n == -2147483648)
+{
+_putchar('-');
+r = 8;
+n = n / 10;
+n = -n;
+for (div = 100000000; div <= 1; div /= 10)
+{
+_putchar((n / div) + '0');
+n = n % div;
+}
+_putchar(r + '0');
+}
 if ((n < 0) && (n > -2147483648))
 {
 _putchar('-');
+
 }
 num = n;
 i = 1;
