@@ -13,6 +13,5 @@ for (i = 1; i < n; i++)
 {
 printf("%d, ", *(a + i - 1));
 }
-printf("%d", *(a + i - 1));
-printf("\n");
+printf("%d\n", *(a + i - 1));
 }
