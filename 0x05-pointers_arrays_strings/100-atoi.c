@@ -19,7 +19,7 @@ i++;
 }
 while ((s[i] >= '0') && (s[i] <= '9'))
 {
-integer = (integer * 10) + s[i];
+integer = (integer * 10) + (s[i] - '0');
 i++;
 }
 if (((count % 2) != 0) && (integer != 0))
