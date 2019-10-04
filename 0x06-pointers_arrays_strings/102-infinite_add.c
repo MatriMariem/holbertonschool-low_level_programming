@@ -10,6 +10,9 @@
 */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
+int i, j, k, l, small, ind, first, second, dec;
+char tab1[];
+char tab2[];
 while (n1[i] != '\0')
 {
 i++;
