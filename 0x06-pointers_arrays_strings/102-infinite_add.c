@@ -13,6 +13,9 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 int i, j, k, l, small, ind, first, second, dec;
 char tab1[];
 char tab2[];
+i = 0;
+j = 0;
+dec = 0;
 while (n1[i] != '\0')
 {
 i++;
@@ -39,8 +42,8 @@ small = 0;
 if (l >= size_r)
 return (0);
 r[l] = '\0';
-tab1 = n1;
-tab2 = n2;
+tab1[] = n1[];
+tab2[] = n2[];
 if ((i != j)&&(small != 0))
 {
 if (i == small)
