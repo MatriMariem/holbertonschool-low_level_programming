@@ -22,6 +22,7 @@ s[j] = s[i];
 i++;
 j++;
 }
+s[j] = '\0';
 return (s);
 }
 else
