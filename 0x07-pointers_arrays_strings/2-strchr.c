@@ -8,7 +8,6 @@
 char *_strchr(char *s, char c)
 {
 int i, j;
-char dest[];
 i = 0;
 while ((s[i] != c) && (s[i] != '\0'))
 {
@@ -19,11 +18,11 @@ if (s[i] == c)
 j = 0;
 while (s[i] != '\0')
 {
-dest[j] = s[i];
+s[j] = s[i];
 i++;
 j++;
 }
-return (dest);
+return (s);
 }
 else
 {
