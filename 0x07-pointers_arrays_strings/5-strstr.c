@@ -18,19 +18,14 @@ for (i = 0; ((haystack[i] != '\0') && (t == 0)); i++)
 if (haystack[i] == needle[0])
 {
 j = 0;
-while ((haystack[i] == needle[j]) && (needle[j] != '\0'))
+while ((haystack[i + j] == needle[j]) && (needle[j] != '\0'))
 {
-i++;
 j++;
 }
 if (j == l)
 {
-return (&(haystack[i - l]));
+return (&(haystack[i]));
 t = 1;
-}
-else
-{
-i--;
 }
 }
 }

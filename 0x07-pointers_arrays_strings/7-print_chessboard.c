@@ -10,7 +10,8 @@ for (i = 0; a[i][j] != '\0'; i++)
 {
 for (j = 0; a[i][j] != '\0'; j++)
 {
-_putchar(a[i][j];
+_putchar(a[i][j]);
 }
+_putchar('\n');
 }
 }
