@@ -19,8 +19,7 @@ return (1);
 cents = atoi(argv[1]);
 if (cents <= 0)
 {
-printf("%d", 0);
-return (0);
+printf("%d\n", 0);
 }
 else
 {
