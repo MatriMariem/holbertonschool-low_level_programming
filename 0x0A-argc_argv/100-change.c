@@ -16,13 +16,14 @@ if (argc != 2)
 printf("Error\n");
 return (1);
 }
-if (*(argv[1]) == '-')
+cents = atoi(argv[1]);
+if (cents <= 0)
 {
 printf("%d", 0);
+return (0);
 }
 else
 {
-cents = atoi(argv[1]);
 count += cents / 25;
 cents %= 25;
 count += (cents / 10);
