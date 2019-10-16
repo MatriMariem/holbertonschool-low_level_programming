@@ -17,8 +17,8 @@ return (0);
 }
 else
 {
-p = malloc((sizeof(char) * size) + 1);
-if (p[0] == '\0')
+p = malloc(sizeof(char) * size);
+if (p == '\0')
 {
 return (0);
 }
@@ -28,7 +28,6 @@ for (i = 0; i < size; i++)
 {
 p[i] = c;
 }
-p[size] = '\0';
 return (p);
 }
 }
