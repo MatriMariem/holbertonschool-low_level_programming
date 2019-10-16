@@ -14,7 +14,7 @@ if ((width <= 0) || (height <= 0))
 {
 return (0);
 }
-Dim = malloc(sizeof(int) * height);
+Dim = malloc(sizeof(int *) * height);
 if (Dim == '\0')
 {
 return (0);
