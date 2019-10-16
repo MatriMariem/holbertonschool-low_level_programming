@@ -22,7 +22,7 @@ free(grid);
 int num_words(char *s)
 {
 int i, k = 0;
-if (s[0] != " ") && (s[0] != '\0')
+if ((s[0] != " ") && (s[0] != '\0'))
 {
 k++;
 }
@@ -60,9 +60,9 @@ if (str[i] != " ")
 {
 len++;
 }
-else if ((len != 0) && (s[i] == " "))
+else if ((len != 0) && (str[i] == " "))
 {
-arr[k] = malloc((1+len) * sizeof(char);
+arr[k] = malloc((1 + len)*sizeof(char));
 k++;
 len = 0;
 if (arr[k] == '\0')
@@ -80,7 +80,7 @@ if (str[i] != " ")
 arr[k][len] = str[i];
 len++;
 }
-else if ((len != 0) && (s[i] == " "))
+else if ((len != 0) && (str[i] == " "))
 {
 arr[k][len] = '\0';
 k++;
