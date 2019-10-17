@@ -44,23 +44,23 @@ char **strtow(char *str)
 {
 int i, len = 0, k = 0, num;
 char **arr;
-if ((str == '\0') || (str == ""))
+if ((str == '\0') || (*str == ""))
 {
 return (0);
 }
 num = num_words(str);
-arr = malloc((num + 1) * sizeof(char));
+arr = malloc((num + 1) * sizeof(char *));
 if (arr == '\0')
 {
 return (0);
 }
-for (i = 0; str[i] != '\0'; i++)
+for (i = 0; *(str + i) != '\0'; i++)
 {
-if (str[i] != " ")
+if (*(str + i) != " ")
 {
 len++;
 }
-else if ((len != 0) && (str[i] == " "))
+else if ((len != 0) && (*(str + i) == " "))
 {
 arr[k] = malloc((1 + len)*sizeof(char));
 k++;
@@ -73,14 +73,14 @@ return (0);
 }
 }
 k = 0;
-for (i = 0; str[i] != '\0'; i++)
+for (i = 0; *(str + i) != '\0'; i++)
 {
-if (str[i] != " ")
+if (*(str + i) != " ")
 {
-arr[k][len] = str[i];
+arr[k][len] = *(str + i);
 len++;
 }
-else if ((len != 0) && (str[i] == " "))
+else if ((len != 0) && (*(str + i) == " "))
 {
 arr[k][len] = '\0';
 k++;
