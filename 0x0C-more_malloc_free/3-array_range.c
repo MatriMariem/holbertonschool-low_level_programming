@@ -8,7 +8,7 @@
 */
 int *array_range(int min, int max)
 {
-int i;
+int i, value;
 int *arr;
 if (min > max)
 {
@@ -19,9 +19,9 @@ if (arr == '\0')
 {
 return (0);
 }
-for (i = min; i <= max; i++)
+for (i = 0, value = min; value <= max; i++, value++)
 {
-arr[i] = i;
+arr[i] = value;
 }
 return (arr);
 }
