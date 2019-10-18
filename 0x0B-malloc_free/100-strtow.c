@@ -1,92 +1,73 @@
-#include <stdlib.h>
 #include "holberton.h"
+#include <stdlib.h>
+#include <stdio.h>
 /**
-* char_free_grid - returns a pointer to a 2d array
-*@grid: 2d array
-*@height: int
-*/
-void char_free_grid(char **grid, int height)
+ * words_count - count number of words in a given string.
+ * @str: given string.
+ * @l: lenght of string.
+ * Return: number of words.
+ */
+int words_count(char *str, int l)
 {
-int i;
-for (i = 0; i < height; i++)
+int i, count = 0;
+
+for (i = 0; i < l; i++)
 {
-free(grid[i]);
+if (str[i] != ' ')
+{
+for (; str[i] != ' '; i++)
+;
+count++;
 }
-free(grid);
 }
+return (count);
+}
+
 /**
-* num_words - gives number of words in a string
-*@s: pointer to a string
-*Return: int
-*/
-int num_words(char *s)
-{
-int i, k = 0;
-if ((s[0] != " ") && (s[0] != '\0'))
-{
-k++;
-}
-for (i = 0; s[i] != '\0'; i++)
-{
-if ((s[i] == " ") && (s[i + 1] != " ") && (s[i + 1] != '\0'))
-{
-k++;
-}
-}
-return (k);
-}
-/**
-* strtow - splits a string into words
-*@str: pointer to a string
-* Return: pointer to an array of strings
-*/
+ * strtow - splits a string into words.
+ * @str: input string.
+ * Return: Pointer to array.
+ */
 char **strtow(char *str)
 {
-int i, len = 0, k = 0, num;
-char **arr;
-if ((str == '\0') || (*str == ""))
+char **words_array;
+int count_word = 0, count_char = 0, i, leng, idx = 0, fr_idx, j = 0, e = 0;
+
+if (str == NULL || *str == '\0')
 {
-return (0);
+return (NULL);
 }
-num = num_words(str);
-arr = malloc((num + 1) * sizeof(char *));
-if (arr == '\0')
+for (leng = 0; str[leng] != '\0'; leng++)
+;
+count_word = words_count(str, leng);
+words_array = (char **)malloc((count_word + 1) * sizeof(char *));
+if (words_array == NULL || count_word == 0)
 {
-return (0);
+free(words_array);
+return (NULL);
 }
-for (i = 0; *(str + i) != '\0'; i++)
+for (i = 0; i < leng; i++)
 {
-if (*(str + i) != " ")
+if (str[i] != ' ')
+{e = 1;
+for (count_char = 0; str[i] != ' ' && str[i] != '\0'; i++)
+count_char++;
+words_array[idx] = (char *)malloc((count_char + 1) * sizeof(char));
+if (words_array[idx] == NULL)
 {
-len++;
+for (fr_idx = 0; fr_idx <= idx; fr_idx++)
+free(words_array[fr_idx]);
+free(words_array);
+return (NULL);
 }
-else if ((len != 0) && (*(str + i) == " "))
-{
-arr[k] = malloc((1 + len)*sizeof(char));
-k++;
-len = 0;
-if (arr[k] == '\0')
-{
-char_free_grid(arr, num + 1);
-return (0);
-}
-}
-}
-k = 0;
-for (i = 0; *(str + i) != '\0'; i++)
-{
-if (*(str + i) != " ")
-{
-arr[k][len] = *(str + i);
-len++;
-}
-else if ((len != 0) && (*(str + i) == " "))
-{
-arr[k][len] = '\0';
-k++;
-len = 0;
+for (j = 0; j < count_char; j++)
+words_array[idx][j] = str[(i - count_char) +j];
+words_array[idx][j] = '\0';
+idx++;
 }
 }
-arr[k] = '\0';
-return (arr);
+if (e != 1)
+return (NULL);
+words_array[idx] = NULL;
+return (words_array);
 }
