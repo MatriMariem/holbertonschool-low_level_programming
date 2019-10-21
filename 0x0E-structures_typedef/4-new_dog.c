@@ -10,18 +10,35 @@
 */
 dog_t *new_dog(char *name, float age, char *owner)
 {
+int i;
 dog_t *d;
 d = malloc(sizeof(dog_t));
-if (d == '\0')
+if (d == '\0' || name == '\0' || owner == '\0')
 {
 return (0);
 }
 d->name = malloc(sizeof(char) * (_strlen(name) + 1));
 d->age = age;
 d->owner = malloc(sizeof(char) * (_strlen(owner) + 1));
+if (d->name == '\0' || d->owner == '\0')
+{
+free(d->name);
+free(d->owner);
+free(d);
+return (0);
+}
+for (i = 0; name[i]; i++)
+{
+d->name[i] = name[i];
+}
+d->name[i] = '\0';
+for (i = 0; owner[i]; i++)
+{
+d->owner[i] = owner[i];
+}
+d->owner[i] = '\0';
 return (d);
 }
-#include "dog.h"
 /**
 * _strlen - it gives the length of a string
 *@s: pointer to a string
