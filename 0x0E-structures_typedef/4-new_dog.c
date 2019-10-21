@@ -14,9 +14,10 @@ dog_t *d;
 d = malloc(sizeof(dog_t));
 if (d == '\0')
 {
-return;
+return (0);
 }
 d->name = name;
 d->age = age;
 d->owner = owner;
+return (d);
 }
