@@ -1,4 +1,6 @@
-#include "function_pointers.h"
+#include "3-calc.h"
+#include <stdlib.h>
+#include <stdio.h>
 /**
 *get_op_func - selects the correct function for the passed operator
 *@s: operator
@@ -15,7 +17,7 @@ op_t ops[] = {
 {NULL, NULL}
 };
 int i = 0;
-while (ops[i] != '\0')
+while (ops[i].op != '\0')
 {
 if (s[0] == ops[i].op[0])
 {
