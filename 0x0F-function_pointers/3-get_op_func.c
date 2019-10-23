@@ -17,7 +17,7 @@ op_t ops[] = {
 int i = 0;
 while (ops[i] != '\0')
 {
-if (*s == ops[i].op)
+if (s[0] == ops[i].op[0])
 {
 return (ops[i].f);
 }
