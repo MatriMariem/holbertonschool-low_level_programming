@@ -50,9 +50,6 @@ printf("%s", string);
 */
 void print_all(const char * const format, ...)
 {
-int i = 0, j;
-char *separator = "";
-va_list ls;
 my_str My_Types[] = {
 {"c", print_char},
 {"i", print_integer},
@@ -60,6 +57,9 @@ my_str My_Types[] = {
 {"s", print_string},
 {NULL, NULL}
 };
+va_list ls;
+unsigned int i = 0, j;
+char *separator = "";
 va_start(ls, format);
 while (format[i] && format)
 {
