@@ -4,38 +4,38 @@
 
 /**
 *print_char - use va arg to print the char
-*@ls: list of arguments
+*@c: char
 */
-void print_char(va_list ls)
+void print_char(va_list c)
 {
-printf("%c", va_arg(ls, int));
+printf("%c", va_arg(c, int));
 }
 
 /**
 *print_integer - use va arg to print the integer
-*@ls: list of arguments
+*@i: int
 */
-void print_integer(va_list ls)
+void print_integer(va_list i)
 {
-printf("%d", va_arg(ls, int));
+printf("%d", va_arg(i, int));
 }
 /**
 *print_float - use va arg to print float
-*@ls: list of arguments
+*@f: float
 */
-void print_float(va_list ls)
+void print_float(va_list f)
 {
-printf("%f", va_arg(ls, double));
+printf("%f", va_arg(f, double));
 }
 
 /**
 *print_string - use va arg to print the string or nil
-*@ls: list of arguments
+*@st: string
 */
-void print_string(va_list ls)
+void print_string(va_list st)
 {
 char *string;
-string = va_arg(ls, char *);
+string = va_arg(st, char *);
 if (string == '\0')
 {
 string = "(nil)";
