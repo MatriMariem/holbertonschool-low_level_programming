@@ -72,6 +72,7 @@ if (format[i] == My_Types[j].letter)
 printf("%s", separator);
 My_Types[j].f(ls);
 separator = ", ";
+break;
 }
 j++;
 }
