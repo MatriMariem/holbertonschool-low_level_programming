@@ -1,7 +1,7 @@
 #ifndef _VARIADIC_FUNCTION_H_
 #define _VARIADIC_FUNCTION_H_
 #include <stdarg.h>
-#include <stdio.h>
+
 /**
  * struct types - pointer to function with corresponding letter
  * @letter: type name
