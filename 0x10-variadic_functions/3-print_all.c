@@ -67,7 +67,7 @@ while (format[i] != '\0' && format != '\0')
 j = 0;
 while (My_Types[j].letter != '\0')
 {
-if (format[i] == My_Types[j].letter[0])
+if (format[i] == *(My_Types[j].letter))
 {
 printf("%s", separator);
 My_Types[j].f(ls);
