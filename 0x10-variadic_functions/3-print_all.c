@@ -55,10 +55,10 @@ int i = 0, j;
 char *separator = "";
 va_list ls;
 my_str My_Types[] = {
-{'c', print_char},
-{'i', print_integer},
-{'f', print_float},
-{'s', print_string},
+{"c", print_char},
+{"i", print_integer},
+{"f", print_float},
+{"s", print_string},
 {'\0', '\0'}
 };
 va_start(ls, format);
@@ -67,7 +67,7 @@ while (format[i] != '\0' && format != '\0')
 j = 0;
 while (My_Types[j].letter != '\0')
 {
-if (format[i] == My_Types[j].letter)
+if (format[i] == My_Types[j].letter[0])
 {
 printf("%s", separator);
 My_Types[j].f(ls);

@@ -13,7 +13,7 @@ void print_all(const char * const format, ...);
  */
 typedef struct types
 {
-char letter;
+char *letter;
 void (*f)(va_list);
 } my_str;
 void print_char(va_list ls);
