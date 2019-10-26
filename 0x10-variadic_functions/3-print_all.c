@@ -38,8 +38,7 @@ char *string;
 string = va_arg(ls, char *);
 if (string == '\0')
 {
-printf("(nil)");
-return;
+string = "(nil)";
 }
 printf("%s", string);
 }
