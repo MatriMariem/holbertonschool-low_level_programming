@@ -48,7 +48,7 @@ printf("%s", string);
 */
 void print_all(const char * const format, ...)
 {
-my_str My_Types[] = {
+my_str mytypes[] = {
 {"c", print_char},
 {"i", print_integer},
 {"f", print_float},
@@ -60,15 +60,15 @@ unsigned int i = 0, j;
 char *separator = "";
 va_start(ls, format);
 i = 0;
-while (format[i] && format)
+while (format && format[i])
 {
 j = 0;
-while (My_Types[j].letter != NULL)
+while (mytypes[j].letter != NULL)
 {
-if (format[i] == *(My_Types[j].letter))
+if (format[i] == *(mytypes[j].letter))
 {
 printf("%s", separator);
-My_Types[j].f(ls);
+mytypes[j].f(ls);
 separator = ", ";
 break;
 }
