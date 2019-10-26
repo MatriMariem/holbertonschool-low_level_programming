@@ -36,7 +36,7 @@ void print_string(va_list st)
 {
 char *string;
 string = va_arg(st, char *);
-if (string == '\0')
+if (string == NULL)
 {
 string = "(nil)";
 }
@@ -58,13 +58,13 @@ my_str My_Types[] = {
 {"i", print_integer},
 {"f", print_float},
 {"s", print_string},
-{'\0', '\0'}
+{NULL, NULL}
 };
 va_start(ls, format);
-while (format[i] != '\0' && format != '\0')
+while (format[i] && format)
 {
 j = 0;
-while (My_Types[j].letter != '\0')
+while (My_Types[j].letter != NULL)
 {
 if (format[i] == *(My_Types[j].letter))
 {
