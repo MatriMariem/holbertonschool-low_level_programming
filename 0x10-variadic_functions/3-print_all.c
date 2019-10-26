@@ -1,87 +1,74 @@
 #include <stdarg.h>
 #include <stdio.h>
-#include "header.h"
+#include "variadic_functions.h"
 
 /**
- * print_char - print a char
- * @c: char to print
- *
- * Return: void
- */
+*print_char - use va arg to print the char
+*@c: char
+*/
 void print_char(va_list c)
 {
-	printf("%c", va_arg(c, int));
+printf("%c", va_arg(c, int));
 }
 
 /**
- * print_str - prints a string
- * @s: string to print
- *
- * Return: void
- */
-
-void print_str(va_list s)
+*print_integer - use va arg to print the integer
+*@i: int
+*/
+void print_integer(va_list i)
 {
-	char *str = va_arg(s, char *);
-
-		if (str == NULL)
-			str = "(nil)";
-	printf("%s", str);
+printf("%d", va_arg(i, int));
 }
-
 /**
- * print_int - prints an int
- * @i: int to print
- *
- * Return: void
- */
-void print_int(va_list i)
-{
-	printf("%d", va_arg(i, int));
-}
-
-/**
- * print_float - prints a float
- * @f: float to print
- *
- * Return: void
- */
-
+*print_float - use va arg to print float
+*@f: float
+*/
 void print_float(va_list f)
 {
-	printf("%f", va_arg(f, double));
+printf("%f", va_arg(f, double));
 }
 
 /**
- * print_all - prints anything
- * @format: list of argument types passed to the function
- *
- * Return: void
- */
-void print_all(const char *const format, ...)
+*print_string - use va arg to print the string or nil
+*@st: string
+*/
+void print_string(va_list st)
 {
-print_f format_arr[] = {
+char *string = va_arg(st, char *);
+if (string == NULL)
+{
+string = "(nil)";
+}
+printf("%s", string);
+}
+
+/**
+*print_all - prints anything
+*@format: a pointer to string that contains types of parameters
+*/
+void print_all(const char * const format, ...)
+{
+my_str My_Types[] = {
 {"c", print_char},
-{"s", print_str},
-{"i", print_int},
+{"i", print_integer},
 {"f", print_float},
+{"s", print_string},
 {NULL, NULL}
 };
-va_list args;
+va_list ls;
 unsigned int i = 0, j;
 char *separator = "";
-
-va_start(args, format);
+va_start(ls, format);
 i = 0;
-while (format && format[i])
+while (format[i] && format)
 {
 j = 0;
-while (format_arr[j].c != NULL)
+while (My_Types[j].letter != NULL)
 {
-if (*(format_arr[j].c) == format[i])
+if (format[i] == *(My_Types[j].letter))
 {
 printf("%s", separator);
-format_arr[j].func(args);
+My_Types[j].f(ls);
 separator = ", ";
 break;
 }
@@ -89,6 +76,6 @@ j++;
 }
 i++;
 }
-va_end(args);
+va_end(ls);
 printf("\n");
 }
