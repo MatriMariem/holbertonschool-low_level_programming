@@ -52,6 +52,7 @@ printf("%s", string);
 void print_all(const char * const format, ...)
 {
 int i = 0, j;
+char *separator = "";
 va_list ls;
 my_str My_Types[] = {
 {'c', print_char},
@@ -61,18 +62,16 @@ my_str My_Types[] = {
 {'\0', '\0'}
 };
 va_start(ls, format);
-while (format[i] != '\0')
+while (format[i] != '\0' && format != '\0')
 {
 j = 0;
 while (My_Types[j].letter != '\0')
 {
 if (format[i] == My_Types[j].letter)
 {
+printf("%s", separator);
 My_Types[j].f(ls);
-if (format[i + 1] != '\0')
-{
-printf(", ");
-}
+separator = ", ";
 }
 j++;
 }
