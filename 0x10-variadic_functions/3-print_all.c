@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include <stdarg.h>
+#include <stdio.h>
 #include "variadic_functions.h"
 
 /**
@@ -34,15 +34,13 @@ printf("%f", va_arg(f, double));
 */
 void print_string(va_list st)
 {
-char *string;
-string = va_arg(st, char *);
+char *string = va_arg(st, char *);
 if (string == NULL)
 {
 string = "(nil)";
 }
 printf("%s", string);
 }
-
 
 /**
 *print_all - prints anything
@@ -61,6 +59,7 @@ va_list ls;
 unsigned int i = 0, j;
 char *separator = "";
 va_start(ls, format);
+i = 0;
 while (format[i] && format)
 {
 j = 0;
@@ -75,7 +74,6 @@ break;
 }
 j++;
 }
-
 i++;
 }
 va_end(ls);
