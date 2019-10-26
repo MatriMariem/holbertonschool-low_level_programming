@@ -79,6 +79,6 @@ j++;
 
 i++;
 }
-printf("\n");
 va_end(ls);
+printf("\n");
 }
