@@ -19,7 +19,7 @@ return (0);
 while (tmp != '\0')
 {
 count++;
-tmp = tmp->str;
+tmp = tmp->next;
 }
 return (count);
 }
