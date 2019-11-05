@@ -33,6 +33,7 @@ else if (idx == 1)
 {
 new->next = (*head)->next;
 (*head)->next = new;
+return (new);
 }
 while (i < (idx - 1))
 {
