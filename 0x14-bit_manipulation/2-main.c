@@ -22,7 +22,10 @@ int main(void)
     printf("%d\n", n);
  n = get_bit(0, 1);
     printf("%d\n", n);
- n = get_bit(98, 0);
+ n = get_bit(98, 31);
     printf("%d\n", n);
+ n = get_bit(98, 35);
+    printf("%d\n", n);
+
     return (0);
 }
