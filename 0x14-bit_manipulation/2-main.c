@@ -26,6 +26,8 @@ int main(void)
     printf("%d\n", n);
  n = get_bit(98, 35);
     printf("%d\n", n);
+ n = get_bit(7, 2);
+    printf("%d\n", n);
 
     return (0);
 }

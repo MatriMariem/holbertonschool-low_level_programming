@@ -12,7 +12,6 @@ unsigned int count;
 int i;
 if (index > 31)
 return (-1);
-
 if (n == 0 && index == 0)
 {
 i = 0;
@@ -30,7 +29,7 @@ n = n >> 1;
 
 if (n == 0)
 {
-i = -1;
+i = 0;
 }
 return (i);
 }
