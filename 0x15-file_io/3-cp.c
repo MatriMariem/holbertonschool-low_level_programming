@@ -13,9 +13,9 @@ void copying(int fd1, int fd2, char *av1, char *av2)
 {
 int rl, rw;
 char mybuff[1024];
-while ((rl = read(fd1, &mybuff, 1024)) != 0)
+while ((rl = read(fd1, mybuff, 1024)) != 0)
 {
-rw = write(fd2, &mybuff, rl);
+rw = write(fd2, mybuff, rl);
 	if (rw < 0)
 	{
 	dprintf(2, "Error: Can't write to %s\n", av2);
@@ -53,7 +53,7 @@ exit(98);
 }
 fd2 = open(av[2], O_WRONLY | O_TRUNC | O_CREAT,
 S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
-if (fd2 < 0)
+if (fd2 == -1)
 {
 dprintf(2, "Error: Can't write to %s\n", av[2]);
 close(fd1);
