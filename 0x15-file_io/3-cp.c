@@ -16,7 +16,7 @@ char mybuff[1024];
 while ((rl = read(fd1, mybuff, 1024)) > 0)
 {
 rw = write(fd2, mybuff, rl);
-	if (rw == -1)
+	if (rw != rl)
 	{
 	dprintf(2, "Error: Can't write to %s\n", av2);
 	exit(99);
