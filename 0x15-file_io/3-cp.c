@@ -11,7 +11,7 @@
 */
 void copying(int fd1, int fd2, char *av1, char *av2)
 {
-int rl, rw;
+int rl, rw, c1, c2;
 char mybuff[1024];
 while ((rl = read(fd1, mybuff, 1024)) > 0)
 {
@@ -59,12 +59,14 @@ dprintf(2, "Error: Can't write to %s\n", av[2]);
 exit(99);
 }
 copying(fd1, fd2, av[1], av[2]);
-if (close(fd1) == -1)
+c1 = close(fd1);
+if (c1 == -1)
 {
 dprintf(2, "Error: Can't close fd %d\n", fd1);
 exit(100);
 }
-if (close(fd2) == -1)
+c2 = close(fd2);
+if (c2 == -1)
 {
 dprintf(2, "Error: Can't close fd %d\n", fd2);
 exit(100);
