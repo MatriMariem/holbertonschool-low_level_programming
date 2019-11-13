@@ -16,14 +16,14 @@ char mybuff[1024];
 while ((rl = read(fd1, mybuff, 1024)) > 0)
 {
 rw = write(fd2, mybuff, rl);
-	if (rw < 0)
+	if (rw == -1)
 	{
 	dprintf(2, "Error: Can't write to %s\n", av2);
 	exit(99);
 	}
 }
 
-if (rl < 0)
+if (rl == -1)
 {
 dprintf(2, "Error: Can't read from file %s\n", av1);
 exit(98);
@@ -56,16 +56,15 @@ S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
 if (fd2 == -1)
 {
 dprintf(2, "Error: Can't write to %s\n", av[2]);
-close(fd1);
 exit(99);
 }
 copying(fd1, fd2, av[1], av[2]);
-if (close(fd1) < 0)
+if (close(fd1) == -1)
 {
 dprintf(2, "Error: Can't close fd %d\n", fd1);
 exit(100);
 }
-if (close(fd2) < 0)
+if (close(fd2) == -1)
 {
 dprintf(2, "Error: Can't close fd %d\n", fd2);
 exit(100);
