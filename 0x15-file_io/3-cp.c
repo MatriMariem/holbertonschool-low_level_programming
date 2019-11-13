@@ -29,17 +29,19 @@ if (fd2 < 0)
 dprintf(2, "Error: Can't write to %s\n", av[2]);
 exit(99);
 }
-rl = read(fd1, &mybuff, 1024);
-if (rl < 0)
+while ((rl = read(fd1, &mybuff, 1024)) != 0)
 {
-dprintf(2, "Error: Can't read from file %s\n", av[1]);
-exit(98);
-}
 rw = write(fd2, &mybuff, rl);
 if (rw < 0)
 {
 dprintf(2, "Error: Can't write to %s\n", av[2]);
 exit(99);
+}
+}
+if (rl < 0)
+{
+dprintf(2, "Error: Can't read from file %s\n", av[1]);
+exit(98);
 }
 if (close(fd1) < 0)
 {
