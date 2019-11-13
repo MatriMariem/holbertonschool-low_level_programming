@@ -13,7 +13,7 @@ void copying(int fd1, int fd2, char *av1, char *av2)
 {
 int rl, rw;
 char mybuff[1024];
-while ((rl = read(fd1, mybuff, 1024)) != 0)
+while ((rl = read(fd1, mybuff, 1024)) > 0)
 {
 rw = write(fd2, mybuff, rl);
 	if (rw < 0)
