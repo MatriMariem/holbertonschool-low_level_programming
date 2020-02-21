@@ -1,4 +1,4 @@
 # -*- MakeFile -*-
 
 all:
-	gcc main.c holberton.c m.h -o holberton
+	gcc main.c holberton.c -o holberton
