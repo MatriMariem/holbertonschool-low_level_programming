@@ -14,7 +14,7 @@ int binary_recursive(int *array, size_t first, size_t last, int value)
 	size_t mid;
 	int x;
 
-	if (!array || last < first)
+	if (!array || (int)last < (int)first)
 		return (-1);
 	printf("Searching in array: ");
 	for (mid = first; mid <= last; mid++)
