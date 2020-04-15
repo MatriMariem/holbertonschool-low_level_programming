@@ -25,7 +25,7 @@ int binary_recursive(int *array, size_t first, size_t last, int value)
 	}
 	printf("\n");
 	mid = (first + last) / 2;
-	if (array[first] == value)
+	if (array[first] == value && array[mid] == value)
 		return (first);
 	else if (array[mid] == value)
 		x = binary_recursive(array, first, mid, value);
